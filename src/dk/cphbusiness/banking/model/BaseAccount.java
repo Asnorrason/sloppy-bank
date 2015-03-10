@@ -1,4 +1,4 @@
-package dk.cphbusiness.banking;
+package dk.cphbusiness.banking.model;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -40,7 +40,8 @@ public class BaseAccount implements Account {
     }
 
   @Override
-  public void transfer(String targetNumber, int amount) throws UnsufficientFundsException {
+  public void transfer(String targetNumber, int amount)
+      throws UnsufficientFundsException {
     Account target = bank.findAccount(targetNumber);
     Movement movement = new Movement(new Date(), amount, this, target);
     outgoing.add(movement);

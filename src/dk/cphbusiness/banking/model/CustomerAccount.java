@@ -1,4 +1,4 @@
-package dk.cphbusiness.banking;
+package dk.cphbusiness.banking.model;
 
 public class CustomerAccount extends BaseAccount {
   private Customer customer;

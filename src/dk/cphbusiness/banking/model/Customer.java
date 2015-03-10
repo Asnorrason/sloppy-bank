@@ -1,8 +1,9 @@
-package dk.cphbusiness.banking;
+package dk.cphbusiness.banking.model;
 
 import java.util.Collection;
 
-public interface Bank {
+public interface Customer {
+  int getId();
   String getName();
   Account findAccount(String number);
   Collection<Account> listAccounts();

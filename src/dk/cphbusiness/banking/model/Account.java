@@ -1,4 +1,4 @@
-package dk.cphbusiness.banking;
+package dk.cphbusiness.banking.model;
 
 public interface Account {
   String getNumber();
@@ -6,7 +6,8 @@ public interface Account {
   Customer getCustomer();
   boolean isInternal();
   int getBalance();
-  void transfer(String targetNumber, int amount) throws UnsufficientFundsException;
+  void transfer(String targetNumber, int amount)
+      throws UnsufficientFundsException;
   void addOutgoing(Movement movement);
   void addIncoming(Movement movement);
   }
