@@ -1,6 +1,7 @@
 package dk.cphbusiness.banking.data;
 
 import dk.cphbusiness.banking.model.Customer;
+import java.util.Collection;
 
 public interface BankDataAccessor {
 //  static BankDataAccessor instance =
@@ -8,4 +9,5 @@ public interface BankDataAccessor {
   
   Customer saveCustomer(Customer customer);
   Customer findCustomer(int id);
+  Collection<Customer> listCustomers();
   }

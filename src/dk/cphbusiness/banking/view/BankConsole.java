@@ -1,6 +1,7 @@
 package dk.cphbusiness.banking.view;
 
 import dk.cphbusiness.banking.control.BankManager;
+import dk.cphbusiness.banking.control.dto.CustomerDTO;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -18,11 +19,14 @@ public class BankConsole {
     System.out.println("Welcome to Fidus Bank");
     try {
       while (running) {
-        System.out.print("Enter command: ");
+        System.out.print("Enter name: ");
         String line = in.readLine();
-        // command in line will be used at a later point :-)
-        int id = manager.createCustomer("Kurt");
+        int id = manager.createCustomer(line);
         System.out.println("The new customer has id #"+id);
+        System.out.println();
+        for (CustomerDTO customer : manager.listCustomers()) {
+          System.out.println(">> #"+customer.getId()+" "+customer.getName()+" "+customer.getTotal());
+          }
         System.out.println();
         }
       }
